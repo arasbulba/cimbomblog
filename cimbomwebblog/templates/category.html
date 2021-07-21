@@ -1,0 +1,50 @@
+{%extends "base.html" %}
+{% load thumbnail %}
+
+{% block body %}
+
+    
+
+<div class="album py-5 bg-light">
+
+    
+    
+    <div class="container">
+
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for post in catlist %}
+        <div class="col">
+          <div class="card shadow-sm">
+
+            {% thumbnail post.image "419x200" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+            
+        
+
+            <div class="card-body">
+                <p class="card-text"><b><h4>{{ post.title }}</a></b></h4><small><i></small></i></p>
+                <p class="card-text">{{ post.excerpt }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'cimbomweb:post' post.id %}" style="color: black"><b>READ MORE</b></a></button>
+                  
+                </div>
+                <small class="text-muted">{{ post.created_at }}</small>
+                
+              </div>
+              
+            </div>
+           
+          </div>
+          
+        </div>
+        {% endfor %}
+       
+       
+ 
+        
+        
+
+{% endblock %}
