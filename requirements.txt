@@ -1,3 +1,4 @@
 Django==3.2.5
 django_ckeditor==6.1.0
 sorl_thumbnail==12.7.0
+django-crispy-forms==1.1.0
