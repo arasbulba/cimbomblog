@@ -1,6 +1,6 @@
 from typing import List
 from django.views.generic import DetailView, FormView, ListView
-from .models import Category, Post
+from .models import Category, Players, Post
 from .forms import AddPostForm
 from django.shortcuts import get_object_or_404, render 
 from django.db.models import Q
@@ -63,6 +63,15 @@ class SearchView(ListView):
         )
         return object_list
     
+class PlayersView(ListView):
+    http_method_names = ["get"]
+    template_name = "players.html"
+    model = Players
+    context_object_name = "players"
+    queryset = Players.objects.all().order_by('id')
+ 
+
+   
 
 
 

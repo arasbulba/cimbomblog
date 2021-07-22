@@ -1,11 +1,12 @@
 from django.db import models
 from django.db.models.deletion import PROTECT
+from django.db.models.enums import Choices
 from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
-from django.utils.text import slugify
-from django.urls import reverse
 from sorl.thumbnail import ImageField
 from ckeditor.fields import RichTextField
+
+
 
 STATUS = (
     (0,"Draft"),
@@ -37,17 +38,43 @@ class Post(models.Model):
         ordering = ['-created_at']
 
     
-
     def __str__(self):
         return self.title
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
 
-    def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+
+FOOT = (
+    ("RIGHT","Right"),
+    ("LEFT","Left")
+)
+
+
+class Positions(models.Model):
+    position = models.CharField(max_length=60, default=None)
+
+    def __str__(self):
+        return self.position
+
+
+
+class Players(models.Model):
+
+    photo = ImageField(upload_to='static/img', default=None)
+    name = models.CharField(max_length=200, unique=True)
+    pos = models.ManyToManyField(Positions, related_name="player_position")
+    number = models.CharField(max_length=2, unique=True, null=True, default=None)
+    country = models.CharField(max_length=60)
+    salary = models.CharField(max_length=60)
+    foot = models.CharField(max_length=60, choices=FOOT, default=None)
+    height = models.CharField(max_length=60)
+    about = models.TextField(max_length=400)
+
+
+    def __str__(self):
+        return self.name
+    
+    
+
 
 
 

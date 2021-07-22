@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block body %}
+
+
+<div class="container">
+    
+   
+    
+        <br>
+    
+        <table class="table">
+            {% for player in players %}
+            <thead>
+            
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ player.number }}</th>
+                <td>{% thumbnail player.photo "90x90" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}</td>
+                <td>{{ player.name }}</td>
+                <td>{% for p in player.pos.all %}{{p}}{%endfor%}</td>
+                <td>{{player.foot}}</td>
+                <td>{{player.country}}</td>
+                <td>{{ player.salary }}</td>
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+</div>
+
+
+      
+
+
+
+      {% endblock %}
+
+  
