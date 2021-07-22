@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Players, Post, Category
+from .models import Players, Positions, Post, Category
 
 class PostAdmin(admin.ModelAdmin):
    list_display = ('title', 'created_at', 'author')
@@ -11,4 +11,5 @@ class PlayersAdmin(admin.ModelAdmin):
    list_display = ('name', 'foot', 'height', 'country')
 
 admin.site.register(Players, PlayersAdmin)
+admin.site.register(Positions)
 
