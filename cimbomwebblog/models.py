@@ -5,7 +5,6 @@ from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
 from ckeditor.fields import RichTextField
-from PIL import Image
 
 
 STATUS = (
