@@ -1,10 +1,10 @@
 from django.db import models
 from django.db.models.deletion import PROTECT
-from django.db.models.enums import Choices
 from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
 from ckeditor.fields import RichTextField
+from PIL import Image
 
 
 STATUS = (
