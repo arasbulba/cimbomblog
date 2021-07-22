@@ -1,1 +1,1 @@
-web: gunicorn hello:cimbomweb
+web: gunicorn cimbomweb.wsgi
