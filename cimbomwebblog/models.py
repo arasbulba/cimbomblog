@@ -58,7 +58,7 @@ class Positions(models.Model):
 
 class Players(models.Model):
 
-    photo = ImageField(upload_to='', default=None)
+    image = CloudinaryField('image', default=None, null=True)
     name = models.CharField(max_length=200, unique=True)
     pos = models.ManyToManyField(Positions, related_name="player_position")
     number = models.CharField(max_length=2, unique=True, null=True, default=None)
