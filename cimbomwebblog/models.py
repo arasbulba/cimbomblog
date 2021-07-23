@@ -4,6 +4,7 @@ from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 
 STATUS = (
@@ -26,7 +27,7 @@ class Post(models.Model):
     category = ForeignKey(Category, on_delete=PROTECT, default=1)
     excerpt = models.CharField(max_length=200)
     body = RichTextField(blank=False, null=False)
-    image = ImageField(upload_to='media/', default=None)
+    image = CloudinaryField('image', default=None)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)

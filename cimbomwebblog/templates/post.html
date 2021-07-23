@@ -1,5 +1,6 @@
 {%extends "base.html" %}
 {% load thumbnail %}
+{% load cloudinary %}
 {% block body %}
 
 
@@ -13,9 +14,8 @@
     <i>{{ post.created_at }} - {{ post.category }}</i>
     <ul></ul>
       
-      {% thumbnail post.image "1280x400" crop="center" as im %}
-      <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-      {% endthumbnail %}
+      
+      <img src="{{ post.image.url }}">
   
       
       <ul></ul>
