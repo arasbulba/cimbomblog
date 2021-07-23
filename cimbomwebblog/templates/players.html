@@ -29,7 +29,7 @@
               {% for player in players %}
               <tr>
                 <th scope="row">{{ player.number }}</th>
-                <td>{% cloudinary player.image.public_id height=90 width=90 %}</td>
+                <td>{% cloudinary player.image.public_id height=90 width=90 crop="fill" %}</td>
                 <td><h5>{{ player.name }}</h5></td>
                 <td>{% for p in player.pos.all %}{{p}}{%endfor%}</td>
                 <td>{{player.foot}}</td>
