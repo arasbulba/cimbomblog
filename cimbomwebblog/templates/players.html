@@ -29,9 +29,7 @@
               {% for player in players %}
               <tr>
                 <th scope="row">{{ player.number }}</th>
-                <td>{% thumbnail player.photo "60x60" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                {% endthumbnail %}</td>
+                <td>{% cloudinary post.image.public_id height=90 width=90 %}</td>
                 <td><h5>{{ player.name }}</h5></td>
                 <td>{% for p in player.pos.all %}{{p}}{%endfor%}</td>
                 <td>{{player.foot}}</td>
