@@ -6,7 +6,9 @@ from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    image = CloudinaryField('image', default=None)
+    image = CloudinaryField('image', default='static/img/menprofile_mirh47.png')
+
+
     def __str__(self):
         return str(self.user)
 
