@@ -62,6 +62,8 @@
           <ul></ul>
           <ul></ul>
           <ul></ul>
+
+          
   
            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{% url 'cimbomweb:index' %}" class="nav-link px-2 text-white">Home</a></li>
@@ -70,27 +72,39 @@
             <li><a href="{% url 'cimbomweb:players' %}" class="nav-link px-2 text-white">Team</a></li>
             <li><a href="#" class="nav-link px-2 text-white">About</a></li>
           </ul> 
+
+          
   
           <form class="form-inline my-2 my-lg-0" action="{% url 'cimbomweb:search' %}", method="GET">
           
           <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
-            
+      
+          
         </form>
+
+
           
         <ul></ul>
   
           <div class="text-end">
             {% if request.user.is_authenticated %}
-            <a href="{% url 'account_logout'%}"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
+  
+            <a href="#"><button type="button" class="btn btn-dark">You signed in as {{post.author.profile.user}}   <img src="{{post.author.profile.image.url}}" width="10" height="15"></button></a>
+            <a href="{% url 'account_logout'%}"><button type="button" class="btn btn-primary btn-sm">Logout</button></a>
+            
+          
             {% else %}
             <a href="{% url 'account_login'%}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
             <a href="{% url 'account_signup'%}"><button type="button" class="btn btn-warning">Sign-up</button></a>
             {% endif %}
           </div>
-        </div>
+          
+     
+        
       </div>
     </header>
-
+          </div>
+    
 <main>
 
 {% block body %}{% endblock %}  
@@ -103,7 +117,7 @@
       <a href="#">Back to top</a>
     </p>
     <p class="mb-1">All Rights Reserved &copy; Galatsaray.az</p>
-    <p class="mb-0">by Aras Bulba</p>
+    <p class="mb-0">by Aras Bulba </p> 
   </div>
 </footer>
 

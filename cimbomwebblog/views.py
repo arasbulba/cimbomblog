@@ -15,6 +15,7 @@ class HomePageView(ListView):
     paginate_by = 6
 
 
+
 class PostDetailView(DetailView):
     template_name = "post.html"
     model = Post
