@@ -5,7 +5,7 @@ from django.views.generic import DetailView
 class ProfileDetailView(DetailView):
     http_method_names = ["get"]
     template_name = "account/detail.html"
-    model = "User"
+    model = User
     context_object_name = "user"
     slug_field = "username"
     slug_url_kwarg = "username"

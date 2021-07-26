@@ -3,14 +3,18 @@
 {% load i18n %}
 {% load account socialaccount %}
 
+<br>
+<br>
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block body %}
+<br>
+<br>
 
 <div class="container">
 
 <h1>{% trans "Sign In" %}</h1>
-
+<br>
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
@@ -45,5 +49,19 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
 </form>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 {% endblock %}

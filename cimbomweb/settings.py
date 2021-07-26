@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'profiles'
+    'profiles',
+    'django_cleanup.apps.CleanupConfig'
 
 
 ]
@@ -166,8 +167,13 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'araz.gasimov'
+EMAIL_HOST_PASSWORD = 'GS1905cimbom'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 cloudinary.config( 
   cloud_name = "arasbulba", 
