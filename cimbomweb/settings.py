@@ -172,9 +172,9 @@ AUTHENTICATION_BACKENDS = (
 
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.yahoo.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'araz.gasimov'
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'arazoner@yahoo.com'
 EMAIL_HOST_PASSWORD = 'GS1905cimbom'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -191,8 +191,6 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-TINYMCE_JS_URL = os.path.join(STATIC_URL, "path/to/tiny_mce/tiny_mce.js")
-TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "path/to/tiny_mce")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
