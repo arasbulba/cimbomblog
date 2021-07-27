@@ -1,6 +1,5 @@
 from django.forms import ModelForm
 from .models import Players, Post
-from sorl.thumbnail import ImageField
 
 
 

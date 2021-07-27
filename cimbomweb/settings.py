@@ -52,12 +52,16 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'profiles',
+    'tinymce',
     'django_cleanup.apps.CleanupConfig'
+
 
 
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -184,8 +188,12 @@ cloudinary.config(
 
 import os
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TINYMCE_JS_URL = os.path.join(STATIC_URL, "path/to/tiny_mce/tiny_mce.js")
+TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "path/to/tiny_mce")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

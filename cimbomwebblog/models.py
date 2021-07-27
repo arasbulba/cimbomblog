@@ -2,9 +2,9 @@ from django.db import models
 from django.db.models.deletion import PROTECT
 from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
-from sorl.thumbnail import ImageField
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 from cloudinary.models import CloudinaryField
+from ckeditor.fields import RichTextField
 
 
 STATUS = (
@@ -39,6 +39,9 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+
+    def count_posts_of(user):
+        return Post.objects.filter(author=user).count()
 
 
 

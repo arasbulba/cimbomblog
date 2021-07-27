@@ -2,30 +2,57 @@
 {% load thumbnail %}
 {% load cloudinary %}
 {% block body %}
+{% load static %}
 
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<ul></ul>
 <br>
+<div class="container pb50">
+    <div class="row">
+        <div class="col-md-9 mb40">
+            <article>
+                <img src="{{post.image.url}}" alt="" class="img-fluid mb30">
+                <div class="post-content">
+                    <h3>{{ post.title}}</h3>
+                    <ul class="post-meta list-inline">
+                        <li class="list-inline-item">
+                            <i class="fa fa-user-circle-o"></i> <a href="#">{{post.author}}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-o"></i> <a href="#">{{post.created_at}}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-tags"></i> <a href="#">{{post.category}}</a>
+                        </li>
+                    </ul>
+                    <p>{{ post.body|safe }}</p>
+                    
+                    
+                    
+                    
+                </div>
+            </article>
+            <!-- post article-->
 
-<main role="main" class="container">
-
-    <div class="starter-template">
-        <ul></ul>
-      <h1>{{ post.title}}</h1>
-      <uL>
-    </uL>
-    <i>{{ post.created_at }} - {{ post.category }}</i>
-    <ul></ul>
-      
-      
-     {% cloudinary post.image.public_id height=600 width=1280 crop="fill" class="cld-responsive" %}
-  
-      
-      <ul></ul>
-      <p class="lead">{{ post.body|safe }}</p>
+        </div>
+        <div class="col-md-3 mb40">
+            <div class="mb40">
+                
+            </div>
+            <!--/col-->
+            <div class="mb40">
+                
+            </div>
+            <!--/col-->
+            <div>
+                
+            </div>
+        </div>
     </div>
-  
-  </main><!-- /.container -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
-  </html>
+</div>
 
   {% endblock %}

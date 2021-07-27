@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(cimbomblog_urls, namespace='cimbomwebblog')),
     path("profile/", include(profiles_urls, namespace="profiles")),
-    url("", include("allauth.urls"))
+    url("", include("allauth.urls")),
+    path('tinymce/', include('tinymce.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

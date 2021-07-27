@@ -1,23 +1,21 @@
-{%extends "base.html" %}
+{% extends "base.html" %}
 {% load thumbnail %}
 {% load cloudinary %}
 {% block body %}
 
 
+
 <div class="album py-5 bg-light">
 
-    
     <div class="container">
       
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for post in posts %}
         <div class="col">
           <div class="card shadow-sm">
 
-            
-
-            {% cloudinary post.image.public_id height=200 width=419 crop="fill"  %}
+            {% cloudinary post.image.url crop="scale" height=250 %}
+              
 
 
             <div class="card-body">
