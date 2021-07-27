@@ -172,7 +172,7 @@ AUTHENTICATION_BACKENDS = (
 
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.yahoo.com'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'arazoner@yahoo.com'
 EMAIL_HOST_PASSWORD = 'GS1905cimbom'
