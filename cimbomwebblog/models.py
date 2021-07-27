@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models.deletion import PROTECT
 from django.db.models.fields.related import ForeignKey
 from django.contrib.auth.models import User
-from tinymce.models import HTMLField
 from cloudinary.models import CloudinaryField
 from ckeditor.fields import RichTextField
 
