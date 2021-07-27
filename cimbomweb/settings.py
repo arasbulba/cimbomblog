@@ -172,11 +172,12 @@ AUTHENTICATION_BACKENDS = (
 
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.mail.yahoo.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'arazoner@yahoo.com'
-EMAIL_HOST_PASSWORD = 'GS1905cimbom'
+EMAIL_HOST = 'smtp.elasticemail.com'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = 'araz.gasimov@gmail.com'
+EMAIL_HOST_PASSWORD = 'B3709F4DCB276B44E439728DE80B8620EB23'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'araz.gasimov@gmail.com'
 
 cloudinary.config( 
   cloud_name = "arasbulba", 
