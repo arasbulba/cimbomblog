@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'profiles',
-    'tinymce',
     'django_cleanup.apps.CleanupConfig'
 
 
