@@ -1,7 +1,12 @@
+from django.contrib.auth import models
+from django.forms import widgets
+from profiles.forms import EditProfileForm, EditUserForm
+import profiles
+from profiles.models import Profile
 from django.contrib.auth.models import User
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, FormView
 from cimbomwebblog.models import Post
-
+from django.shortcuts import render 
 
 
 class ProfileDetailView(DetailView):
@@ -18,3 +23,12 @@ class ProfileDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['total_posts'] = Post.objects.filter(author=user).count()
         return context
+
+class ProfileEditView(UpdateView):
+    template_name = "account/edit.html"
+    model = Profile
+    success_url = "/"
+    fields = ('image', 'full_name', 'occupation', 'facebook', 'twitter', 'linkedin')
+
+    def get_object(self):
+        return self.request.user.profile

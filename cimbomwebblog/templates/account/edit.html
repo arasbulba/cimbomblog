@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load cloudinary %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <ul></ul>
+        <div class = "form-group">
+        <form method ="POST"  action="" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ form.media}}
+            
+            {{ form|crispy }}
+            <ul></ul>
+            <div>
+                <button type = "submit" class="btn btn-success" >Make changes</button>
+            </div>
+        </form>
+        </div>
+      
+    </div>
+
+{% endblock %}
