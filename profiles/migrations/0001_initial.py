@@ -29,5 +29,3 @@ class Migration(migrations.Migration):
             ],
         ),
     ]
-
-print("--hello--"*20)
