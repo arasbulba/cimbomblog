@@ -71,7 +71,7 @@
                     <div class="col-sm-12">
                       
                       
-                      {% if user.profiles.id == profiles.user.id %}
+                      {% if request.user.is_authenticated and request.user.id == user.id %}
                       
                       <a class="btn btn-info " target="__blank" href="{% url 'profiles:profiledit' user.profile %}">Edit profile</a>
                      
@@ -89,15 +89,38 @@
         </div>
     </div>
 
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <div class="album py-5 bg-light">
 
+      <div class="container">
+        <h2>Latest Posts</h2>
+        <ul></ul>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for post in all_posts %}
+          <div class="col">
+            <div class="card shadow-sm">
+  
+              {% cloudinary post.image.url crop="scale" height=250 %}
+                
+  
+  
+              <div class="card-body">
+                  <p class="card-text"><b><h4>{{ post.title }}</a></b></h4><small><i><a href="{% url 'cimbomweb:category' post.category.pk%} ">{{ post.category }}</a></small></i></p>
+                  <p class="card-text">{{ post.excerpt }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'cimbomweb:post' post.id %}" style="color: black"><b>READ MORE</b></a></button>
+                    
+                  </div>
+                  <small class="text-muted">{{ post.created_at }}</small>
+                  
+                </div>
+                
+              </div>
+             
+            </div>
+            
+          </div>
+          {% endfor %}
 
 {% endblock %}
       
