@@ -3,9 +3,6 @@
 {% load cloudinary %}
 {% block body %}
 
-<head>
-
-</head>
 
 
 <br>
@@ -72,14 +69,18 @@
                   <br>
                   <div class="row">
                     <div class="col-sm-12">
+                      
+                      
+                      {% if user.profiles.id == profiles.user.id %}
+                      
                       <a class="btn btn-info " target="__blank" href="{% url 'profiles:profiledit' user.profile %}">Edit profile</a>
+                     
+                      {% endif %}
+                      
                     </div>
                   </div>
                 </div>
               </div>
-
-              
-
 
 
             </div>

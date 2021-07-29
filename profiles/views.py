@@ -24,6 +24,7 @@ class ProfileDetailView(DetailView):
         context['total_posts'] = Post.objects.filter(author=user).count()
         return context
 
+
 class ProfileEditView(UpdateView):
     template_name = "account/edit.html"
     model = Profile
@@ -32,3 +33,4 @@ class ProfileEditView(UpdateView):
 
     def get_object(self):
         return self.request.user.profile
+
