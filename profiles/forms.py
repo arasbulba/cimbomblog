@@ -12,6 +12,6 @@ class EditUserForm(ModelForm):
 class EditProfileForm(ModelForm):
     class Meta:
         model=Profile
-        fields=['image', 'full_name', 'occupation', 'facebook', 'twitter', 'linkedin']
+        fields=['image', 'occupation', 'facebook', 'twitter', 'linkedin']
 
     
