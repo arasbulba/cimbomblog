@@ -28,7 +28,7 @@ class ProfileEditView(UpdateView):
     template_name = "account/edit.html"
     model = Profile
     success_url = "/"
-    fields = ('image', 'full_name', 'occupation', 'facebook', 'twitter', 'linkedin')
+    form_class = EditProfileForm
 
     def get_object(self):
         return self.request.user.profile

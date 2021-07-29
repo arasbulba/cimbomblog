@@ -11,7 +11,7 @@ from django.forms.widgets import Textarea
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    
+    full_name = CharField(max_length=200, null=True, blank=True)
     image = CloudinaryField('image', default='static/img/menprofile_mirh47.png', blank=True, null=True)
     occupation = CharField(max_length=140, null=True, blank=True)
     facebook = CharField(max_length=140, null=True, blank=True)
