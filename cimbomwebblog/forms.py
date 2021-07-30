@@ -7,7 +7,7 @@ class AddPostForm(ModelForm):
 
     class Meta:
         model = Post
-        fields = "__all__"
+        fields = ('title', 'slug', 'category', 'excerpt', 'body', 'image', 'status')
 
 
 class AddPlayerForm(ModelForm):

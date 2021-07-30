@@ -32,10 +32,18 @@ class AddPostView(FormView):
         form = AddPostForm(self.request.POST or None, self.request.FILES or None)
 
         if form.is_valid():
-            form.save()
+            
+            item = form.save(commit=False)
+            item.author = self.request.user
+            item.save()
 
         context['form'] = form
         return render(self.request, "index.html", context)
+
+    
+  
+
+    
 
 
 class CategoryView(ListView):
