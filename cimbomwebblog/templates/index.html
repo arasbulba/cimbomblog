@@ -26,7 +26,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'cimbomweb:post' post.id %}" style="color: black"><b>READ MORE</b></a></button>
                   
                 </div>
-                </small>{{ post.created_at }} <i><small>posted by</small></i><small class="text-muted"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small>
+                <small>{{ post.created_at }}</small><i> <small>posted by</small></i><small class="text-muted"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small>
                 
               </div>
               
