@@ -59,7 +59,7 @@
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <center><a href="{% url 'cimbomweb:index' %}"><img src="{% static 'img/logo.png' %}" width="280" height="100" alt="371px-Old-logo-of-Galatasaray-SK-svg" border="0"></a><h5></h5></center>
+            <center><a href="{% url 'cimbomweb:index' %}"><img src="{% static 'img/logo.png' %}" width="180" height="80" alt="371px-Old-logo-of-Galatasaray-SK-svg" border="0"></a><h5></h5></center>
           </a>
 
           <ul></ul>
@@ -96,7 +96,7 @@
   
             <button type="button" class="btn btn-dark"><a href="{% url 'profiles:details' request.user %}" style="color: white">You logged in as {{request.user.profile}}
               
-              <img src="{{request.user.profile.image.url}}" width="20" height="20" crop="fill"></button></a>
+              <img class="rounded-circle" src="{{request.user.profile.image.url}}" width="30" height="30" crop="fill"></button></a>
               
             <a href="{% url 'account_logout'%}"><button type="button" class="btn btn-primary btn-sm">Logout</button></a>
             

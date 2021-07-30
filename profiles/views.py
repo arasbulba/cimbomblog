@@ -37,10 +37,6 @@ class ProfileEditView(UpdateView):
 
     def get_object(self):
         return self.request.user.profile
-
-    def user_author(self):
-        if not request.user.profile.is_authenticated:
-            return render(request, 'index.html')
     
     def get_success_url(self):
         return reverse('profiles:details', args=[self.request.user.username])
