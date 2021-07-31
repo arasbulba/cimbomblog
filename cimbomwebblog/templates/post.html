@@ -9,50 +9,44 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
-<ul></ul>
-<br>
-<div class="container pb50">
-    <div class="row">
-        <div class="col-md-9 mb40">
-            <article>
-                <img src="{{post.image.url}}" alt="" class="img-fluid mb30">
-                <div class="post-content">
-                    <h3>{{ post.title}}</h3>
-                    <ul class="post-meta list-inline">
-                        <li class="list-inline-item">
-                            <i class="fa fa-user-circle-o"></i> <a href="#">{{post.author}}</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <i class="fa fa-calendar-o"></i> <a href="#">{{post.created_at}}</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <i class="fa fa-tags"></i> <a href="#">{{post.category}}</a>
-                        </li>
-                    </ul>
-                    <p>{{ post.body|safe }}</p>
-                    
-                    
-                    
-                    
-                </div>
-            </article>
-            <!-- post article-->
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">{{ post.title}}</h1>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">posted on {{post.created_at}} by {{post.author}}</div>
+                    <!-- Post categories-->
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.category}}</a>
+                    
+                </header>
+                <!-- Preview image figure-->
+                <figure class="mb-4"><img class="img-fluid rounded" src="{{post.image.url}}" alt="..." /></figure>
+                <!-- Post content-->
+                <section class="mb-5">
+                    {{post.body|safe}}
+                </section>
+            </article>
+            <!-- Comments section-->
+            <section class="mb-5">
+                
+            </section>
         </div>
-        <div class="col-md-3 mb40">
-            <div class="mb40">
-                
-            </div>
-            <!--/col-->
-            <div class="mb40">
-                
-            </div>
-            <!--/col-->
-            <div>
-                
-            </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Search widget-->
+            
+            <!-- Categories widget-->
+            
+            <!-- Side widget-->
+            
         </div>
+        
     </div>
 </div>
-
   {% endblock %}

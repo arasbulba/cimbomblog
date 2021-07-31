@@ -1,9 +1,11 @@
 from typing import List
+from django.contrib.auth.models import User
 from django.views.generic import DetailView, FormView, ListView
 from .models import Category, Players, Post
 from .forms import AddPostForm
 from django.shortcuts import get_object_or_404, render 
 from django.db.models import Q
+
 
 
 class HomePageView(ListView):
@@ -39,11 +41,6 @@ class AddPostView(FormView):
 
         context['form'] = form
         return render(self.request, "index.html", context)
-
-    
-  
-
-    
 
 
 class CategoryView(ListView):
