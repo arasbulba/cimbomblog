@@ -19,14 +19,14 @@
 
 
             <div class="card-body">
-                <p class="card-text"><b><h4>{{ post.title }}</a></b></h4><small><i><a href="{% url 'cimbomweb:category' post.category.pk%} ">{{ post.category }}</a></small></i></p>
+                <p class="card-text"><b><h4>{{ post.title }}</a></b></h4> <i> <small>posted by</small> <small class="text-muted"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small></i> </p>
                 <p class="card-text">{{ post.excerpt }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'cimbomweb:post' post.id %}" style="color: black"><b>READ MORE</b></a></button>
+                  <button type="button" class="btn btn-secondary btn-sm"><a href="{% url 'cimbomweb:post' post.id %}" style="color: black"><b><small>READ MORE</small></b></a></button>
                   
                 </div>
-                <small>{{ post.created_at }}</small><i> <small>posted by</small></i><small class="text-muted"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small>
+                <small>{{ post.created_at }}</small>
                 
               </div>
               
