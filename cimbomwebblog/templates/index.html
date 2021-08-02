@@ -2,24 +2,26 @@
 {% load thumbnail %}
 {% load cloudinary %}
 {% block body %}
-
+{% load static %}
 
 
 <div class="album py-5 bg-light">
 
+
     <div class="container">
+      
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for post in posts %}
         <div class="col">
           <div class="card shadow-sm">
 
-            {% cloudinary post.image.url crop="scale" height=250 %}
+            {% cloudinary post.image.url height=250 width="auto" crop="fill" class='cld-responsive' %}
               
 
 
             <div class="card-body">
-                <p class="card-text"><b><h4>{{ post.title }}</a></b></h4> <i> <small>posted by</small> <small class="text-muted"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small></i> </p>
+                <p class="card-text"><b><h4>{{ post.title }}</a></b></h4> <i> <small>posted by</small> <small class="text-muted fst-italic mb-2"><a href="{% url 'profiles:details' post.author%} ">{{ post.author }}</a></small></i> </p>
                 <p class="card-text">{{ post.excerpt }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">

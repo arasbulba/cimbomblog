@@ -10850,3 +10850,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.cropimg {
+
+  position: absolute;
+  
+  object-fit: cover;
+  
+  }
