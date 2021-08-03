@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load cloudinary %}
+{% block body %}
+{% load static %}
+
+
+
+            <div class="container">
+              <div class="table-responsive">
+                  
+                 
+                  
+                      <br>
+                  
+                      <table class="table">
+                          
+                          <thead>
+                            
+                            <tr>
+                              
+                              <th scope="col">#</th>
+                              <th scope="col">Team</th>
+                              <th scope="col">Matches</th>
+                              <th scope="col">Wins</th>
+                              <th scope="col">Draws</th>
+                              <th scope="col">Losses</th>
+                              <th scope="col">G/D</th>
+                              <th scope="col">Points</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for value in response.data.table %}
+                            <tr>
+                              <th scope="row">{{value.rank}}</th>
+                              <td>{{ value.name }}</td>
+                              <td>{{value.matches}}</td>
+                              <td>{{value.won}}</td>
+                              <td>{{value.drawn}}</td>
+                              <td>{{value.lost}}</td>
+                              <td>{{value.goal_diff}}</td>
+                              <td>{{value.points}}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+              
+              </div>
+              </div>
+              
+    
+
+{% endblock %}

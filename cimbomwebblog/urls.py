@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import HomePageView, PostDetailView, AddPostView, CategoryView, SearchView, PlayersView
-
+from . import views
 
 app_name = 'cimbomweb'
 
@@ -10,6 +10,7 @@ urlpatterns = [
     path('add_post/', AddPostView.as_view(), name='add'),
     path('category/<int:pk>', CategoryView.as_view(), name = 'category'),
     path('search/', SearchView.as_view(), name = 'search'),
-    path('players/', PlayersView.as_view(), name = 'players')
+    path('players/', PlayersView.as_view(), name = 'players'),
+    path('countries/', views.countries, name = 'countries')
 ]
 

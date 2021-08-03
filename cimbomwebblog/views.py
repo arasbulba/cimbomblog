@@ -1,11 +1,13 @@
 from typing import List
 from django.contrib.auth.models import User
 from django.views.generic import DetailView, FormView, ListView
+from django.views.generic.base import TemplateView
 from .models import Category, Players, Post
 from .forms import AddPostForm
 from django.shortcuts import get_object_or_404, render 
 from django.db.models import Q
-
+import requests
+import json
 
 
 class HomePageView(ListView):
@@ -77,7 +79,14 @@ class PlayersView(ListView):
     queryset = Players.objects.all().order_by('id')
  
 
-   
+
+def countries(request):
+    response = requests.get('https://livescore-api.com/api-client/leagues/table.json?competition_id=6&key=JzUQDb8aMfjrxSCy&secret=WVYFnz20hqqhoZl7zfYdq7ndmGFUzhsw').json()
+    
+    return render(request, 'countries.html',{'response':response})
+
+
+
 
 
 
