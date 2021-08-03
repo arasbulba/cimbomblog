@@ -83,7 +83,12 @@ class PlayersView(ListView):
 def countries(request):
     response = requests.get('https://livescore-api.com/api-client/leagues/table.json?competition_id=6&key=JzUQDb8aMfjrxSCy&secret=WVYFnz20hqqhoZl7zfYdq7ndmGFUzhsw').json()
     
-    return render(request, 'countries.html',{'response':response})
+    headers = {
+    'api-key': "JzUQDb8aMfjrxSCy",
+    'api-secret': "WVYFnz20hqqhoZl7zfYdq7ndmGFUzhsw"
+    }
+
+    return render(request, 'matchday.html',{'response':response})
 
 
 
